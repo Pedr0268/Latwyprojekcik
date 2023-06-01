@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .navbar {
+            background-color: #663399;
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .nav-link {
+            color: #fff;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            background-color: #fff;
+            border: 1px solid #663399;
+            color: #663399;
+            padding: 6px 10px;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .btn-primary {
+            border-color: #663399;
+        }
+
+        .btn-primary:hover {
+            background-color: #512b8b;
+            border-color: #512b8b;
+            color: white;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .table {
+            margin-top: 20px;
+            padding: 10px;
+            width: auto;
+          border-collapse: collapse;
+        }
+
+        .table, th, td {
+        border: 2px solid black;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <span class="navbar-brand px-3">Strona menedżera pracowników</span>
+    <div class="navbar" id="navbarNav">
+        <ul class="navbar-nav">
+            <li>
+                <a class="nav-link active" href="/">Lizta pracownikó</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/input">Dodaj pracownika</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="d-flex justify-content-center p-3">
+    <form th:action="@{/szukajnazwiska/szukaj}" method="post">
+        <label for="userInput">Szukaj pracownika po nazwisku:</label><br>
+        <input type="text" name="nazwisko" placeholder="Wpisz nazwisko" id="userInput" /><br>
+        <input id="bnt" class="btn btn-primary" type="submit" value="Szukaj">
+    </form>
+</div>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Imie</th>
+            <th>Nazwisko</th>
+            <th>Pozycja</th>
+            <th>Pensja</th>
+            <th>Edytuj</th>
+            <th>Usuń</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="entry, stat : ${employeeManager.getEmployees()}">
+            <td th:text="${stat.index +1}"></td>
+            <td th:text="${entry.value.imie}"></td>
+            <td th:text="${entry.value.nazwisko}"></td>
+            <td th:text="${entry.value.pozycja}"></td>
+            <td th:text="${entry.value.pensja}"></td>
+            <td><a th:href="@{/edit/{id}(id=${entry.value.idpracownika})}"
+                   class="btn btn-primary">Edytuj</a></td>
+            <td>
+                <form th:action="@{/usun/{id}(id=${entry.value.idpracownika})}" method="post" onsubmit="return confirm('Czy na pewno?')">
+                    <button type="submit" class="btn btn-danger">Usuń</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>

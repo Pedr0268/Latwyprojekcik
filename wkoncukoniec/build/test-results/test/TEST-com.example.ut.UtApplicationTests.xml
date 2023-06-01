@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.ut.UtApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-25T18:37:57" hostname="DESKTOP-MFKMSPG" time="0.401">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.ut.UtApplicationTests" time="0.401"/>
+  <system-out><![CDATA[20:37:56.337 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Neither @ContextConfiguration nor @ContextHierarchy found for test class [UtApplicationTests]: using SpringBootContextLoader
+20:37:56.341 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader -- Could not detect default resource locations for test class [com.example.ut.UtApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:37:56.341 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.ut.UtApplicationTests]: UtApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:37:56.363 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using ContextCustomizers for test class [UtApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+20:37:56.424 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider -- Identified candidate component class: file [C:\Users\Paeqw\Documents\Java Projects\ut\build\classes\java\main\com\example\ut\UtApplication.class]
+20:37:56.426 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.ut.UtApplication for test class com.example.ut.UtApplicationTests
+20:37:56.503 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils -- Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+20:37:56.504 [Test worker] DEBUG org.springframework.test.context.util.TestContextSpringFactoriesUtils -- Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom TestExecutionListener classes or make the default TestExecutionListener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+20:37:56.506 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Using TestExecutionListeners for test class [UtApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+20:37:56.507 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener -- Before test class: class [UtApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.6)
+
+2023-05-25T20:37:56.721+02:00  INFO 18256 --- [    Test worker] com.example.ut.UtApplicationTests        : Starting UtApplicationTests using Java 18.0.1.1 with PID 18256 (started by Paeqw in C:\Users\Paeqw\Documents\Java Projects\ut)
+2023-05-25T20:37:56.724+02:00  INFO 18256 --- [    Test worker] com.example.ut.UtApplicationTests        : No active profile set, falling back to 1 default profile: "default"
+2023-05-25T20:37:57.468+02:00  INFO 18256 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-05-25T20:37:57.593+02:00  INFO 18256 --- [    Test worker] com.example.ut.UtApplicationTests        : Started UtApplicationTests in 1.05 seconds (process running for 1.969)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Edytuj pracownika</title>
+
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #663399;
+      font-family: Arial, sans-serif;
+    }
+    span{
+    text-alight: center;
+    }
+
+    .navbar {
+      background-color: #663399;
+    }
+
+    .navbar-brand {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-size: 16px;
+    }
+
+    h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-size: 18px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #663399;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background-color: #663399;
+      border-color: #663399;
+      padding: 10px 20px;
+      font-size: 18px;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <span class="navbar-brand px-3"><b>Strona menedżera pracowników</b></span>
+  <div class="navbar" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active" href="/">Lista zatrudnionych</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/input">Dodaj Pracownika</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="p-3">
+  <h2>Edycja Pracownika</h2>
+  <form th:action="@{'/aktualizuj/'+${employee.idpracownika}}" method="post">
+    <input type="hidden" th:field="${employee.idpracownika}"/>
+    <label for="pozycja">Pozycja:</label>
+    <input type="text" id="pozycja" th:field="${employee.pozycja}" required/>
+    <label for="pensja">Wynagrodzenie:</label>
+    <input type="number" id="pensja" th:field="${employee.pensja}" required/>
+    <button class="btn btn-primary" type="submit">Zaapisz zmiany</button>
+  </form>
+</div>
+</body>
+</html>
